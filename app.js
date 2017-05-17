@@ -7,7 +7,8 @@ var express         = require("express"),
     
 var app = express();
 
-mongoose.connect("mongodb://localhost/blogs_database");
+var url = process.env.DATABASEURL || "mongodb://localhost/blogs_database"
+mongoose.connect(url);
 
 app.set("view engine","ejs");
 
@@ -61,7 +62,7 @@ app.get("/blogs/new",function(req, res) {
 
 //CREATE ROUTE
 app.post("/blogs",function(req,res){
-    req.body.blog.body=req.sanitizer(req.body.blog.body);
+    req.body.blog.body=req.sanitize(req.body.blog.body);
    Blog.create(req.body.blog,function(err,newBlog){
       if(err){
         console.log(err);
@@ -94,7 +95,7 @@ app.get("/blogs/:id/edit",function(req, res) {
 
 //UPDATE ROUTE
 app.put("/blogs/:id",function(req,res){
-    req.body.blog.body=req.sanitizer(req.body.blog.body);
+    req.body.blog.body=req.sanitize(req.body.blog.body);
     //res.send("UPDATED");
    Blog.findByIdAndUpdate(req.params.id,req.body.blog,function(err,updatedBlog){
       if(err)
