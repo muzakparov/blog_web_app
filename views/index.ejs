@@ -4,6 +4,7 @@
     <h1 class="ui center aligned header">Index Page</h1>
     
     <% blogs.forEach(function(blog){ %>
+    <div style="margin-bottom:20px">
         <div class="ui center aligned grid">
             <h2><a href="/blogs/<%= blog._id %>"><%= blog.title %></a></h2>
         </div>
@@ -19,6 +20,8 @@
         <div class="ui center aligned grid">
             <a class="ui blue button" href="/blogs/<%= blog._id %>">Read More</a>
         </div>
+        <hr/>
+    </div>
     <% }) %>
 </div>
 
