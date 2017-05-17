@@ -1,0 +1,1 @@
+Simple Blog Web Application created using Express + EJS + Mongoose +
