@@ -1,0 +1,101 @@
+2017-05-17T14:07:33.330979+00:00 app[api]: Set process.env.DATABASEURL config vars by user muzakparov@gmail.com
+2017-05-17T14:07:33.330979+00:00 app[api]: Release v4 created by user muzakparov@gmail.com
+2017-05-17T14:07:36.116868+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-05-17T14:07:38.807780+00:00 heroku[web.1]: Process exited with status 1
+2017-05-17T14:07:38.715205+00:00 app[web.1]: npm ERR! Linux 3.13.0-112-generic
+2017-05-17T14:07:38.715472+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-05-17T14:07:38.715665+00:00 app[web.1]: npm ERR! node v6.10.3
+2017-05-17T14:07:38.715828+00:00 app[web.1]: npm ERR! npm  v3.10.10
+2017-05-17T14:07:38.717358+00:00 app[web.1]: 
+2017-05-17T14:07:38.719078+00:00 app[web.1]: npm ERR! missing script: start
+2017-05-17T14:07:38.719303+00:00 app[web.1]: npm ERR! 
+2017-05-17T14:07:38.719451+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-05-17T14:07:38.719614+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-05-17T14:07:38.735232+00:00 app[web.1]: 
+2017-05-17T14:07:38.735409+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-05-17T14:07:38.735507+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-05-17T14:07:38.818205+00:00 heroku[web.1]: State changed from starting to crashed
+2017-05-17T14:07:39.236661+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=74f5d34a-7707-440c-8a1d-4375d410040d fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:07:40.181585+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=2cb8c955-5613-4345-9976-ed866d11e19c fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:07:45.420346+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=6dca99ff-ad65-4c05-aaa6-53cb4a740091 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:07:45.703974+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=7bb3f31d-d549-4e65-bd57-4b03c923aa50 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:08:41.551379+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=e206caa4-e06e-4644-a295-da47a65d214f fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:08:41.996202+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=f976dd56-223f-4409-b54c-a48a30187277 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:09:22.268854+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=b2190f0b-92aa-4813-995b-9485e23e3b81 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:09:22.681779+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=fbcce13c-1f61-460c-ac5c-5ffc3cea5265 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:13:21.407049+00:00 app[api]: Remove process.env.DATABASEURL config vars by user muzakparov@gmail.com
+2017-05-17T14:13:21.407049+00:00 app[api]: Release v5 created by user muzakparov@gmail.com
+2017-05-17T14:13:22.432418+00:00 heroku[web.1]: State changed from crashed to starting
+2017-05-17T14:13:24.946975+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-05-17T14:13:27.894745+00:00 app[web.1]: npm ERR! Linux 3.13.0-112-generic
+2017-05-17T14:13:27.895110+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-05-17T14:13:27.895324+00:00 app[web.1]: npm ERR! node v6.10.3
+2017-05-17T14:13:27.895528+00:00 app[web.1]: npm ERR! npm  v3.10.10
+2017-05-17T14:13:27.897648+00:00 app[web.1]: 
+2017-05-17T14:13:27.899259+00:00 app[web.1]: npm ERR! missing script: start
+2017-05-17T14:13:27.899484+00:00 app[web.1]: npm ERR! 
+2017-05-17T14:13:27.899787+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-05-17T14:13:27.912126+00:00 app[web.1]: 
+2017-05-17T14:13:27.899635+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-05-17T14:13:27.912399+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-05-17T14:13:27.912530+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-05-17T14:13:28.038658+00:00 heroku[web.1]: Process exited with status 1
+2017-05-17T14:13:28.066704+00:00 heroku[web.1]: State changed from starting to crashed
+2017-05-17T14:13:41.865861+00:00 heroku[web.1]: State changed from crashed to starting
+2017-05-17T14:13:41.495079+00:00 app[api]: Set DATABASEURL config vars by user muzakparov@gmail.com
+2017-05-17T14:13:41.495079+00:00 app[api]: Release v6 created by user muzakparov@gmail.com
+2017-05-17T14:13:44.760200+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-05-17T14:13:47.626092+00:00 app[web.1]: npm ERR! node v6.10.3
+2017-05-17T14:13:47.626353+00:00 app[web.1]: npm ERR! npm  v3.10.10
+2017-05-17T14:13:47.625791+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-05-17T14:13:47.628326+00:00 app[web.1]: 
+2017-05-17T14:13:47.625319+00:00 app[web.1]: npm ERR! Linux 3.13.0-112-generic
+2017-05-17T14:13:47.630801+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-05-17T14:13:47.630595+00:00 app[web.1]: npm ERR! 
+2017-05-17T14:13:47.642101+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-05-17T14:13:47.641870+00:00 app[web.1]: 
+2017-05-17T14:13:47.642218+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-05-17T14:13:47.630302+00:00 app[web.1]: npm ERR! missing script: start
+2017-05-17T14:13:47.631006+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-05-17T14:13:47.728387+00:00 heroku[web.1]: Process exited with status 1
+2017-05-17T14:13:47.742454+00:00 heroku[web.1]: State changed from starting to crashed
+2017-05-17T14:13:49.392903+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=80b78a5b-1eb0-41f2-980c-18eba3e89b57 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:13:50.243773+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=5c19d322-1c9f-40e3-890c-915e8670b8f9 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:34:47.664864+00:00 heroku[web.1]: State changed from crashed to starting
+2017-05-17T14:34:50.198779+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-05-17T14:34:54.002196+00:00 heroku[web.1]: Process exited with status 1
+2017-05-17T14:34:53.841744+00:00 app[web.1]: npm ERR! Linux 3.13.0-112-generic
+2017-05-17T14:34:53.842119+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-05-17T14:34:53.842342+00:00 app[web.1]: npm ERR! node v6.10.3
+2017-05-17T14:34:53.842587+00:00 app[web.1]: npm ERR! npm  v3.10.10
+2017-05-17T14:34:53.844633+00:00 app[web.1]: 
+2017-05-17T14:34:53.846116+00:00 app[web.1]: npm ERR! missing script: start
+2017-05-17T14:34:53.846318+00:00 app[web.1]: npm ERR! 
+2017-05-17T14:34:53.846475+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-05-17T14:34:53.846633+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-05-17T14:34:53.876509+00:00 app[web.1]: 
+2017-05-17T14:34:53.876784+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-05-17T14:34:53.876907+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-05-17T14:34:54.018942+00:00 heroku[web.1]: State changed from starting to crashed
+2017-05-17T14:40:34.525204+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=f0d84fc1-660e-4f55-a3d9-c775a11cff02 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:40:35.113448+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=6a8b1f4c-a6ed-4686-9bfb-1a0b52c40c51 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:41:32.233187+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=0729e9b8-5491-4a32-a54c-bababf472551 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:41:32.977678+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=2281509e-dc02-4880-b968-90f272e75637 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:52:52.507522+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-reef-55859.herokuapp.com request_id=974b7570-58d8-435a-97f7-f98495bf98ee fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T14:52:53.092529+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-reef-55859.herokuapp.com request_id=7e80854e-d76f-4f45-a9dd-db4b7f8d3f54 fwd="194.27.245.181" dyno= connect= service= status=503 bytes= protocol=https
+2017-05-17T15:03:01.476592+00:00 heroku[web.1]: State changed from crashed to starting
+2017-05-17T15:03:03.849670+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-05-17T15:03:06.702722+00:00 app[web.1]: npm ERR! Linux 3.13.0-112-generic
+2017-05-17T15:03:06.703182+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-05-17T15:03:06.703462+00:00 app[web.1]: npm ERR! node v6.10.3
+2017-05-17T15:03:06.703733+00:00 app[web.1]: npm ERR! npm  v3.10.10
+2017-05-17T15:03:06.706077+00:00 app[web.1]: 
+2017-05-17T15:03:06.707784+00:00 app[web.1]: npm ERR! missing script: start
+2017-05-17T15:03:06.708027+00:00 app[web.1]: npm ERR! 
+2017-05-17T15:03:06.708203+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-05-17T15:03:06.708378+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-05-17T15:03:06.722015+00:00 app[web.1]: 
+2017-05-17T15:03:06.722274+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-05-17T15:03:06.722399+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-05-17T15:03:06.817557+00:00 heroku[web.1]: State changed from starting to crashed
+2017-05-17T15:03:06.806690+00:00 heroku[web.1]: Process exited with status 1
