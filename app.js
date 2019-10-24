@@ -3,7 +3,8 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     path            = require("path"),
     methodOverride  = require("method-override"),
-    expressSanitizer= require("express-sanitizer");
+    expressSanitizer= require("express-sanitizer"),
+    cors            = require("cors");
     
 var app = express();
 
