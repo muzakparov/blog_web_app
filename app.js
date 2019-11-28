@@ -29,19 +29,6 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog",blogSchema);
 
-/*
-Blog.create({
-    title:"First Blog Post",
-    image:"http://www.indiacelebrating.com/wp-content/uploads/Global-warming.jpg",
-    body:"Me. I'm huge. I ve got a blog."
-},function(err,blog){
-    if(err)
-        console.log(err);
-    else
-        console.log(blog);
-});
-*/
-
 app.get("/",function(req,res){
     res.redirect("/blogs");
 });
