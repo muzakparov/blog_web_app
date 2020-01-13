@@ -2,3 +2,5 @@
 <p>Minimalistic Blog Web Application created using <strong>Express</strong> + <strong>EJS</strong> + <strong>Mongoose</strong> + <strong>MongoDB</strong> + <strong>Semantic UI</strong>.</p>
 <p>Implemented all <strong>7 RESTful routes</strong>.</p>
 <p>Deployed on heroku and database stored on mongolab.</p>
+
+<p>To be versioned soon to different methodologies</p>
