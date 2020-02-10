@@ -1,0 +1,74 @@
+<% include ../partials/header %>
+
+<div class="card">
+  <div class="card-header">
+    <a href="/events" class="float-left text-sm-left">Back</a>
+    <h1 class="text-center">
+      Create a new event
+    </h1>
+  </div>
+  <div class="card-body">
+    <form action="/events" method="POST">
+      <div class="form-group">
+        <label for="name">name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="event[name]"
+          aria-describedby="name"
+          placeholder="Enter name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          name="event[description]"
+          aria-describedby="description"
+          placeholder="Enter description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="starts_at">starts_at</label>
+        <input
+          type="text"
+          class="form-control"
+          id="starts_at"
+          name="event[starts_at]"
+          aria-describedby="starts_at"
+          placeholder="Enter starts_at"
+        />
+      </div>
+      <div class="form-group">
+        <label for="ends_at">ends_at</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ends_at"
+          name="event[ends_at]"
+          aria-describedby="ends_at"
+          placeholder="Enter ends_at"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ends_at">ends_at</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ends_at"
+          name="event[ends_at]"
+          aria-describedby="ends_at"
+          placeholder="Enter ends_at"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>

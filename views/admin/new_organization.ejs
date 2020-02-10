@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+
+<div class="card">
+  <div class="card-header">
+    <h1>
+      Setup New Organization
+    </h1>
+  </div>
+  <div class="card-body">
+    <form action="/organizations" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="organization[name]"
+          aria-describedby="name"
+          placeholder="Enter name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="googleAnalytics">Google Analytics</label>
+        <input
+          type="text"
+          class="form-control"
+          id="googleAnalytics"
+          name="organization[googleAnalytics]"
+          aria-describedby="googleAnalytics"
+          placeholder="Enter Google Analytics url"
+        />
+      </div>
+      <div class="form-group">
+        <label for="logo">Logo Url</label>
+        <input
+          type="text"
+          class="form-control"
+          id="logo"
+          name="organization[logo]"
+          aria-describedby="logo"
+          placeholder="Enter logo url"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          name="organization[description]"
+          aria-describedby="description"
+          placeholder="Enter description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="socialLink">Social Link</label>
+        <input
+          type="text"
+          class="form-control"
+          id="socialLink"
+          name="organization[socialLink]"
+          aria-describedby="socialLink"
+          placeholder="Enter social link"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>

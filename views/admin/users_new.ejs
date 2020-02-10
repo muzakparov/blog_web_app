@@ -1,0 +1,62 @@
+<% include ../partials/header %>
+
+<div class="card">
+  <div class="card-header">
+    <a href="/users" class="float-left text-sm-left">Back</a>
+    <h1 class="text-center">
+      Create a new user
+    </h1>
+  </div>
+  <div class="card-body">
+    <form action="/users" method="POST">
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="user[firstName]"
+          aria-describedby="firstName"
+          placeholder="Enter firstName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="user[lastName]"
+          aria-describedby="lastName"
+          placeholder="Enter lastName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="user[email]"
+          aria-describedby="email"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password_digest">password_digest</label>
+        <input
+          type="text"
+          class="form-control"
+          id="password_digest"
+          name="user[password_digest]"
+          aria-describedby="password_digest"
+          placeholder="Enter password_digest"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>

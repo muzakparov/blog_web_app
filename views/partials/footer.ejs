@@ -1,8 +1,23 @@
-        <div class="ui inverted vertical footer segment form-page center aligned">
-          <div class="ui container">
-            <p ">by <a href="https://github.com/muzakparov">Bakhtiiar Muzakparov</a></p>
-          </div>
         </div>
+       
+        <script>
+            // add script front-end here
+            function removeUser(userId) {
+                console.log('userid',userId, )
 
+                const formData = new FormData();
+                formData.append('userId', userId);
+
+                return fetch('/users/delete', {
+                    method: 'DELETE',
+                    body: formData
+                }).then(response => response.json()).then(()=>{
+                    location.reload();
+
+                })
+
+               
+            }
+          </script>
     </body>
 </html>
