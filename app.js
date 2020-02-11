@@ -5,15 +5,18 @@ var express = require("express"),
   methodOverride = require("method-override"),
   expressSanitizer = require("express-sanitizer");
 var multiparty = require("multiparty");
-var http = require('http')
+var http = require("http");
 
 var reload = require("reload");
 
 var app = express();
-app.set('port', process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3000);
 
 var url = process.env.DATABASEURL || "mongodb://localhost/chapters_database";
-mongoose.connect(url);
+var promise = mongoose.connect(url, {
+  useMongoClient: true
+  /* other options */
+});
 
 app.set("view engine", "ejs");
 
@@ -21,7 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer()); //just right below body-parser
 app.use(methodOverride("_method"));
-app.use(bodyParser.json()) // Parses json, multi-part (file), url-encoded
+app.use(bodyParser.json()); // Parses json, multi-part (file), url-encoded
 
 //Blog data model
 var blogSchema = new mongoose.Schema({
@@ -195,32 +198,44 @@ const Tag = mongoose.model("Tag", tagSchema);
 const Sponsor = mongoose.model("Sponsor", sponsorSchema);
 const Event = mongoose.model("Event", eventSchema);
 
-app.get("/events", function(req, res) {
-  res.send("events");
-});
-
-app.get("/events/new", function(req, res) {
-  let chapters, venues, tags, sponsors;
-
-  Event.find()
+app.get("/events", async (req, res) => {
+  const events = await Event.find()
     .populate("chapter_id") // multiple path names in one requires mongoose >= 3.6
     .populate("venue_id") // multiple path names in one requires mongoose >= 3.6
     .populate("tag_ids") // multiple path names in one requires mongoose >= 3.6
-    .populate("sponsors_id") // multiple path names in one requires mongoose >= 3.6
-    .exec(function(err, usersDocuments) {
-      // handle err
-      // usersDocuments formatted as desired
-      console.log(usersDocuments);
-      // res.json({ usersDocuments });
-    });
+    .populate("sponsors_id")
 
-  res.send("sd");
-  // res.render("admin/events_new",{
-  //   chapters,
-  //   venues,
-  //   tags,
-  //   sponsors
-  // });
+    .exec();
+  res.render("admin/events",{events});
+  // res.json({ events });
+});
+
+app.get("/events/new", async (req, res) => {
+  const chapters = await Chapter.find();
+  const venues = await Venue.find();
+  const tags = await Tag.find();
+  const sponsors = await Sponsor.find();
+
+  // res.json({sponsors})
+
+  res.render("admin/events_new", {
+    chapters,
+    venues,
+    tags,
+    sponsors
+  });
+
+  // Event.find()
+  //   .populate("chapter_id") // multiple path names in one requires mongoose >= 3.6
+  //   .populate("venue_id") // multiple path names in one requires mongoose >= 3.6
+  //   .populate("tag_ids") // multiple path names in one requires mongoose >= 3.6
+  //   .populate("sponsors_id") // multiple path names in one requires mongoose >= 3.6
+  //   .exec(function(err, events) {
+  //     // handle err
+
+  //     let {chapter_id:chapters, venue_id:venues, tag_ids:tags, sponsors_id:sponsors}=events
+
+  //   });
 });
 
 app.post("/events", function(req, res) {
@@ -231,6 +246,10 @@ app.post("/events", function(req, res) {
       res.render("admin/events_new");
     } else res.redirect("/events");
   });
+});
+
+app.post("/events", function(req, res) {
+  res.send(req.body);
 });
 
 //later
@@ -306,34 +325,19 @@ app.delete("/blogs/:id", function(req, res) {
   });
 });
 
-
-
-
-var server = http.createServer(app)
-
-
-// // Reload code here
-// reload(app)
-//   .then(function(reloadReturned) {
-//     // Reload started, start web server
-//     server.listen(process.env.PORT || 3000, process.env.IP, function() {
-//       console.log("Server has started...");
-//     });
-//   })
-//   .catch(function(err) {
-//     console.error(
-//       "Reload could not start, could not start server/sample app",
-//       err
-//     );
-//   });
+var server = http.createServer(app);
 
 // Reload code here
-reload(app).then(function (reloadReturned) {
- 
-  // Reload started, start web server
-  server.listen(app.get('port'), function () {
-    console.log('Web server listening on port ' + app.get('port'))
+reload(app)
+  .then(function(reloadReturned) {
+    // Reload started, start web server
+    server.listen(app.get("port"), function() {
+      console.log("Web server listening on port " + app.get("port"));
+    });
   })
-}).catch(function (err) {
-  console.error('Reload could not start, could not start server/sample app', err)
-})
+  .catch(function(err) {
+    console.error(
+      "Reload could not start, could not start server/sample app",
+      err
+    );
+  });

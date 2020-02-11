@@ -1,7 +1,18 @@
         </div>
         <script src="/reload/reload.js"></script>
+        <script type="text/javascript">
+         
+        </script>
        
         <script>
+           $(document).ready(function() {
+             $('#tag_ids').multiselect();
+             $('#sponsors_id').multiselect();
+            });
+
+            //caret is in the middle, switch it to right
+        $(".caret").css('float', 'right');
+        $(".caret").css('margin', '8px 0');
             // add script front-end here
             function removeUser(userId) {
                 console.log('userid',userId, )

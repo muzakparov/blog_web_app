@@ -1,0 +1,55 @@
+<% include ../partials/header %>
+
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center">
+          <span>
+            Events
+          </span>
+          <a
+            class="btn btn-success btn-lg float-right"
+            role="button"
+            aria-pressed="true"
+            href="/events/new"
+            >New Event</a
+          >
+
+          <!-- <a role="button" class="btn btn-success " href="/users/new">New user</button> -->
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="list-group">
+      <% events.forEach(function(user){ %>
+      <div class="list-group-item">
+        <div>
+          firstName : <%= user.firstName %>
+        </div>
+        <div>
+          lastName : <%= user.lastName %>
+        </div>
+        <div>
+          email : <%= user.email %>
+        </div>
+        <div>
+          date : <%= user.date %>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-danger"
+            onclick="removeUser('<%= user.id %>')"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>
