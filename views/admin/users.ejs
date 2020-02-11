@@ -1,13 +1,11 @@
 <% include ../partials/header %>
 
-<div class="card">
+<div class="card jumbotron">
   <div class="card-header">
-    <div class="row">
-      <div class="col">
-        <h1 class="text-center">
-          <span>
-            Users
-          </span>
+    <div class="">
+      <div class="">
+        <h1 class="align-center text-center">
+          Users
           <a
             class="btn btn-success btn-lg float-right"
             role="button"
@@ -15,29 +13,26 @@
             href="/users/new"
             >New user</a
           >
-
           <!-- <a role="button" class="btn btn-success " href="/users/new">New user</button> -->
         </h1>
       </div>
     </div>
   </div>
-  <div class="card-body">
-    <div class="list-group">
+  <div class="card-body mb-2">
       <% users.forEach(function(user){ %>
-      <div class="list-group-item">
-        <div>
-          firstName : <%= user.firstName %>
-        </div>
-        <div>
-          lastName : <%= user.lastName %>
-        </div>
-        <div>
-          email : <%= user.email %>
-        </div>
-        <div>
-          date : <%= user.date %>
-        </div>
-        <div>
+      <div class="border shadow mb-2 p-5 bg-gradient-light bg-white">
+        <table class="table table-bordered">
+          <tbody>
+            <% ["firstName","lastName", "email", "date"].forEach(function(name){
+            %>
+            <tr>
+              <th class="border-top-0"><%= name %></th>
+              <td><%= user[name] %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <div class="text-center">
           <button
             type="button"
             class="btn btn-danger"
@@ -45,11 +40,9 @@
           >
             Remove
           </button>
-        
         </div>
       </div>
       <% }) %>
-    </div>
   </div>
 </div>
 
