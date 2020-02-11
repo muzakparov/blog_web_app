@@ -5,8 +5,12 @@ var express = require("express"),
   methodOverride = require("method-override"),
   expressSanitizer = require("express-sanitizer");
 var multiparty = require("multiparty");
+var http = require('http')
+
+var reload = require("reload");
 
 var app = express();
+app.set('port', process.env.PORT || 3000);
 
 var url = process.env.DATABASEURL || "mongodb://localhost/chapters_database";
 mongoose.connect(url);
@@ -17,6 +21,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer()); //just right below body-parser
 app.use(methodOverride("_method"));
+app.use(bodyParser.json()) // Parses json, multi-part (file), url-encoded
+
 //Blog data model
 var blogSchema = new mongoose.Schema({
   title: String,
@@ -174,9 +180,9 @@ const eventSchema = new mongoose.Schema({
   starts_at: String,
   ends_at: String,
   chapter_id: { type: mongoose.Schema.Types.ObjectId, ref: "Chapter" },
-  venue_id: { type: mongoose.Schema.Types.ObjectId, ref: "Tag" },
+  venue_id: { type: mongoose.Schema.Types.ObjectId, ref: "Venue" },
   tag_ids: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
-  sponsors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Sponsor" }],
+  sponsors_id: [{ type: mongoose.Schema.Types.ObjectId, ref: "Sponsor" }],
   capacity: Number,
 
   date: { type: Date, default: Date.now }
@@ -194,7 +200,27 @@ app.get("/events", function(req, res) {
 });
 
 app.get("/events/new", function(req, res) {
-  res.render("admin/events_new");
+  let chapters, venues, tags, sponsors;
+
+  Event.find()
+    .populate("chapter_id") // multiple path names in one requires mongoose >= 3.6
+    .populate("venue_id") // multiple path names in one requires mongoose >= 3.6
+    .populate("tag_ids") // multiple path names in one requires mongoose >= 3.6
+    .populate("sponsors_id") // multiple path names in one requires mongoose >= 3.6
+    .exec(function(err, usersDocuments) {
+      // handle err
+      // usersDocuments formatted as desired
+      console.log(usersDocuments);
+      // res.json({ usersDocuments });
+    });
+
+  res.send("sd");
+  // res.render("admin/events_new",{
+  //   chapters,
+  //   venues,
+  //   tags,
+  //   sponsors
+  // });
 });
 
 app.post("/events", function(req, res) {
@@ -280,6 +306,34 @@ app.delete("/blogs/:id", function(req, res) {
   });
 });
 
-app.listen(process.env.PORT || 3000, process.env.IP, function() {
-  console.log("Server has started...");
-});
+
+
+
+var server = http.createServer(app)
+
+
+// // Reload code here
+// reload(app)
+//   .then(function(reloadReturned) {
+//     // Reload started, start web server
+//     server.listen(process.env.PORT || 3000, process.env.IP, function() {
+//       console.log("Server has started...");
+//     });
+//   })
+//   .catch(function(err) {
+//     console.error(
+//       "Reload could not start, could not start server/sample app",
+//       err
+//     );
+//   });
+
+// Reload code here
+reload(app).then(function (reloadReturned) {
+ 
+  // Reload started, start web server
+  server.listen(app.get('port'), function () {
+    console.log('Web server listening on port ' + app.get('port'))
+  })
+}).catch(function (err) {
+  console.error('Reload could not start, could not start server/sample app', err)
+})
